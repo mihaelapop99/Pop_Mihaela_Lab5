@@ -51,8 +51,8 @@ namespace Pop_Mihaela_Lab5
             grdMain.DataContext = phoneNumbersDataSet.PhoneNumbers;
             txtPhoneNumberBinding.Path = new PropertyPath("Phonenum");
             txtSubscriberBinding.Path = new PropertyPath("Subscriber");
-            txtContractvalueBinding.Path = new PropertyPath("Contractvalue");
-            txtContractdateBinding.Path = new PropertyPath("Contractdate");
+            txtContractvalueBinding.Path = new PropertyPath("Contact_value");
+            txtContractdateBinding.Path = new PropertyPath("Contact_date");
 
             txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding);
             txtSubscriber.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
@@ -149,8 +149,8 @@ namespace Pop_Mihaela_Lab5
 
             txtPhoneNumber.Text = tempPhonenum;
             txtSubscriber.Text = tempSubscriber;
-            txtContractvalue.Text = txtContractvalue.Text.ToString();
-            txtContractdate.Text = txtContractdate.Text.ToString();
+            txtContractvalue.Text = tempContractvalue;
+            txtContractdate.Text = tempContractdate;
 
             Keyboard.Focus(txtPhoneNumber);
         }
@@ -208,8 +208,8 @@ namespace Pop_Mihaela_Lab5
                     newRow.BeginEdit();
                     newRow["Phonenum"] = txtPhoneNumber.Text.Trim();
                     newRow["Subscriber"] = txtSubscriber.Text.Trim();
-                    newRow["Contractvalue"] = txtContractvalue.Text.Trim();
-                    newRow["Contractdate"] = txtContractdate.Text.Trim();
+                    newRow["Contact_value"] = txtContractvalue.Text.Trim();
+                    newRow["Contact_date"] = txtContractdate.Text.Trim();
                     newRow.EndEdit();
                     phoneNumbersDataSet.PhoneNumbers.Rows.Add(newRow);
                     tblPhoneNumbersAdapter.Update(phoneNumbersDataSet.PhoneNumbers);
@@ -242,8 +242,8 @@ namespace Pop_Mihaela_Lab5
                     editRow.BeginEdit();
                     editRow["Phonenum"] = txtPhoneNumber.Text.Trim();
                     editRow["Subscriber"] = txtSubscriber.Text.Trim();
-                    editRow["Contractvalue"] = txtContractvalue.Text.Trim();
-                    editRow["Contractdate"] = txtContractdate.Text.Trim();
+                    editRow["Contact_value"] = txtContractvalue.Text.Trim();
+                    editRow["Contact_date"] = txtContractdate.Text.Trim();
                     editRow.EndEdit();
                     tblPhoneNumbersAdapter.Update(phoneNumbersDataSet.PhoneNumbers);
                     phoneNumbersDataSet.AcceptChanges();
